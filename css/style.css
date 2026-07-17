@@ -114,7 +114,7 @@ button { cursor: pointer; }
 .hero {
   position: relative;
   min-height: calc(100vh - 74px);
-  display: grid;
+  display: flex;
   align-items: center;
   overflow: hidden;
   background-position: center;
@@ -140,37 +140,46 @@ button { cursor: pointer; }
 .hero-content {
   position: relative;
   z-index: 2;
-  width: min(calc(100% - 2rem), var(--max-width));
-  margin: auto;
-  padding: 5rem 0 7rem;
+  width: min(calc(100% - 2rem), 760px);
+  margin-right: auto;
+  margin-left: max(1rem, calc((100vw - var(--max-width)) / 2));
+  padding: clamp(3.5rem, 8vh, 5.5rem) 0;
 }
+.hero-kicker { margin: 0 0 .9rem; }
+.section-number, .eyebrow, .dialog-kicker { margin: 0 0 .75rem; }
 .hero-kicker, .section-number, .eyebrow, .dialog-kicker {
-  margin: 0 0 .75rem;
   color: var(--sk-orange);
   font-size: .78rem;
   font-weight: 950;
   letter-spacing: .15em;
   text-transform: uppercase;
 }
-.hero h1 {
-  margin: 0;
-  max-width: 800px;
-  font-size: clamp(3.8rem, 9vw, 8rem);
-  line-height: .94;
-  letter-spacing: -.075em;
+.hero h1,
+.subpage-hero h1 {
+  width: fit-content;
+  max-width: 560px;
+  margin: 0 0 1.35rem;
+  font-size: clamp(3.2rem, 4.4vw, 4.7rem);
+  line-height: 1.04;
+  letter-spacing: -.045em;
+  word-break: keep-all;
+  overflow-wrap: normal;
+  text-wrap: balance;
 }
 .hero-copy {
-  max-width: 680px;
-  margin: 1.8rem 0 0;
+  max-width: 660px;
+  margin: 0 0 1.6rem;
   color: rgba(255,255,255,.84);
-  font-size: clamp(1rem, 2vw, 1.18rem);
+  font-size: clamp(1rem, 1.1vw, 1.12rem);
+  line-height: 1.65;
+  word-break: keep-all;
 }
 .hero-actions, .tag-row, .door-actions, .key-row {
   display: flex;
   flex-wrap: wrap;
   gap: .75rem;
 }
-.hero-actions { margin-top: 2rem; }
+.hero-actions { margin-top: 0; }
 .tag-row { margin-top: 2.2rem; }
 .tag-row span {
   padding: .35rem .6rem;
@@ -567,7 +576,7 @@ pre {
 .certificate[hidden] { display: none; }
 
 .subpage-hero {
-  padding: 4.5rem 1rem 2.5rem;
+  padding: 4.5rem 0 2.5rem;
   background:
     linear-gradient(90deg, rgba(14,48,109,.96), rgba(14,48,109,.72)),
     url("../media/skala-building.jpg") center / cover;
@@ -575,7 +584,6 @@ pre {
 }
 .subpage-hero > div,
 .subpage-main { width: min(calc(100% - 2rem), var(--max-width)); margin: auto; }
-.subpage-hero h1 { margin: 0; font-size: clamp(2.4rem, 6vw, 4.8rem); line-height: 1; letter-spacing: -.06em; }
 .subpage-main { padding: 3rem 0 6rem; }
 .subpage-nav { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 2rem; }
 .subpage-nav a { padding: .55rem .75rem; border-radius: 999px; background: white; color: var(--sk-navy); font-weight: 850; text-decoration: none; }
@@ -643,10 +651,30 @@ legend { font-weight: 900; }
   .content-grid { grid-template-columns: 1fr; }
 }
 
-@media (max-width: 760px) {
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-content { width: min(calc(100% - 20rem), 700px); }
+  .hero h1,
+  .subpage-hero h1 { font-size: clamp(3rem, 4.6vw, 4.2rem); }
+  .skipper-widget { width: min(280px, calc(100% - 2rem)); }
+}
+
+@media (max-width: 768px) {
   .hero { min-height: auto; }
-  .hero-content { padding: 4rem 0 6rem; }
-  .hero h1 { font-size: clamp(3.2rem, 17vw, 5.8rem); }
+  .hero-content {
+    width: calc(100% - 2rem);
+    max-width: none;
+    margin: 0 auto;
+    padding: 3.5rem 0 8rem;
+  }
+  .hero h1,
+  .subpage-hero h1 {
+    width: 100%;
+    max-width: 100%;
+    font-size: clamp(2.5rem, 6.25vw, 3rem);
+    line-height: 1.07;
+    letter-spacing: -.035em;
+  }
+  .hero-copy { width: 100%; max-width: 100%; }
   .map-grid, .lesson-grid, .lab-grid, .content-grid, .media-grid, .form-grid { grid-template-columns: 1fr; }
   .room-photo img { aspect-ratio: 4/5; }
   .photo-hotspot { min-width: 58px; min-height: 58px; font-size: .72rem; }
@@ -655,7 +683,7 @@ legend { font-weight: 900; }
   .site-footer { grid-template-columns: 1fr; }
   .result-list { grid-template-columns: 1fr; }
   .result-list dd { padding-top: 0; border-top: 0; }
-  .skipper-widget { right: 1rem; bottom: 1rem; }
+  .skipper-widget { right: 1rem; bottom: 1rem; width: min(320px, calc(100% - 2rem)); }
 }
 
 @media (prefers-reduced-motion: reduce) {
