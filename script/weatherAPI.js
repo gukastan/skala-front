@@ -1,7 +1,19 @@
 const CITIES = {
-  suncheon: { label: "대한민국 순천", latitude: 34.9507, longitude: 127.4872 },
-  seoul: { label: "대한민국 서울", latitude: 37.5665, longitude: 126.9780 },
-  tokyo: { label: "일본 도쿄", latitude: 35.6762, longitude: 139.6503 }
+  gwangju: {
+    label: "대한민국 광주",
+    latitude: 35.15472,
+    longitude: 126.91556
+  },
+  ulsan: {
+    label: "대한민국 울산",
+    latitude: 35.53722,
+    longitude: 129.31667
+  },
+  pangyo: {
+    label: "대한민국 판교",
+    latitude: 37.3970,
+    longitude: 127.1130
+  }
 };
 
 export async function fetchWeather(cityKey) {
