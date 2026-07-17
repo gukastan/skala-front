@@ -258,6 +258,12 @@ button { cursor: pointer; }
   min-height: 230px;
   padding: 1.5rem;
   overflow: hidden;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 .mission-card::before {
   content: "";
@@ -268,20 +274,41 @@ button { cursor: pointer; }
 }
 .mission-card h3 { margin: .8rem 0 .45rem; font-size: 1.35rem; }
 .mission-card p { color: var(--muted); }
-.mission-card .status-label {
-  display: inline-flex;
-  padding: .3rem .55rem;
-  border-radius: 999px;
-  background: var(--wall);
-  color: var(--muted);
-  font-size: .72rem;
-  font-weight: 900;
-}
-.mission-card.completed .status-label { background: rgba(0,143,135,.12); color: var(--sk-teal); }
 .mission-html { --mission-color: var(--sk-orange); }
 .mission-css { --mission-color: var(--sk-blue); }
 .mission-js { --mission-color: var(--sk-yellow); }
 .mission-record { --mission-color: var(--sk-teal); }
+/* 증빙 복구가 완료된 교육관 카드 */
+.mission-card.completed {
+  border: 2px solid var(--sk-teal);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 143, 135, 0.18),
+      var(--paper) 72%
+    );
+
+  box-shadow:
+    0 18px 38px rgba(0, 143, 135, 0.18);
+}
+
+/* 카드 위쪽 색상 막대도 완료 색상으로 변경 */
+.mission-card.completed::before {
+  background: var(--sk-teal);
+}
+
+/* 제목 앞에 체크 표시 추가 */
+.mission-card.completed h3::before {
+  content: "✓ ";
+  color: var(--sk-teal);
+}
+
+/* 완료된 카드의 입장 버튼 색상 변경 */
+.mission-card.completed .button-dark {
+  background: var(--sk-teal);
+  color: white;
+}
 
 .room-photo {
   position: relative;

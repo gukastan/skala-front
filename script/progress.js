@@ -1,3 +1,9 @@
+const roomButtonLabels = {
+  structure: "HTML관 입장",
+  design: "CSS관 입장",
+  logic: "보안실 입장",
+  record: "기록관 입장"
+};
 (() => {
   const STORAGE_KEY = "skalaEscapeProgressV2";
   const defaultState = {
@@ -64,11 +70,19 @@
     });
 
     document.querySelectorAll("[data-key-card]").forEach((card) => {
-      const key = card.dataset.keyCard;
-      card.classList.toggle("completed", Boolean(state.keys[key]));
-      const label = card.querySelector(".status-label");
-      if (label) label.textContent = state.keys[key] ? "복구 완료" : "복구 필요";
-    });
+  const key = card.dataset.keyCard;
+  const completed = Boolean(state.keys[key]);
+
+  card.classList.toggle("completed", completed);
+
+  const enterButton = card.querySelector("a.button");
+
+  if (enterButton) {
+    enterButton.textContent = completed
+      ? "✓ 복구 완료 · 다시 보기"
+      : roomButtonLabels[key];
+  }
+});
 
     document.querySelectorAll("[data-complete-key]").forEach((button) => {
       const key = button.dataset.completeKey;
