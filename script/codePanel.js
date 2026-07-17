@@ -104,6 +104,15 @@
       concept: "조건문 · 이벤트 · DOM",
       title: "출입 비밀번호 추리",
       result: "입력값이 정답보다 큰지 작은지에 따라 Up·Down 힌트가 표시됩니다.",
+      pseudocode: [
+  "1. 1부터 50 사이의 정답 번호를 만든다.",
+  "2. 사용자가 예상 번호를 입력한다.",
+  "3. 확인 버튼을 누르면 입력값을 숫자로 바꾼다.",
+  "4. 입력값이 정답보다 크면 Down을 보여준다.",
+  "5. 입력값이 정답보다 작으면 Up을 보여준다.",
+  "6. 입력값과 정답이 같으면 잠금을 해제한다."
+].join("\n"),
+
       code: `const secret = Math.floor(Math.random() * 50) + 1;
 
 button.addEventListener("click", () => {
@@ -205,6 +214,14 @@ git push origin main`,
           <h3>이 화면에서 구현된 결과</h3>
           <p class="dialog-result"></p>
         </section>
+        <section class="dialog-pseudocode-section" hidden>
+          <h3>의사코드로 먼저 보기</h3>
+          <p>
+            의사코드는 특정 프로그래밍 언어의 문법 대신
+            프로그램의 처리 순서를 사람의 말로 정리한 설계입니다.
+          </p>
+          <pre><code class="dialog-pseudocode"></code></pre>
+        </section>
         <section>
           <h3>실제 관련 코드</h3>
           <pre><code class="dialog-code"></code></pre>
@@ -243,6 +260,19 @@ git push origin main`,
         dialog.querySelector(".dialog-kicker").textContent = currentGuide.concept;
         dialog.querySelector(".dialog-title").textContent = currentGuide.title;
         dialog.querySelector(".dialog-result").textContent = currentGuide.result;
+        const pseudocodeSection =
+        dialog.querySelector(".dialog-pseudocode-section");
+
+        const pseudocodeElement =
+        dialog.querySelector(".dialog-pseudocode");
+
+        if (currentGuide.pseudocode) {
+          pseudocodeSection.hidden = false;
+          pseudocodeElement.textContent = currentGuide.pseudocode;
+} else {
+          pseudocodeSection.hidden = true;
+          pseudocodeElement.textContent = "";
+}
         dialog.querySelector(".dialog-code").textContent = currentGuide.code;
         dialog.querySelector(".dialog-reason").textContent = currentGuide.reason;
 
