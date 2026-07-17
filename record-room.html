@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Git·AI 기록관 | SKALA CODE ESCAPE</title>
+  <link rel="stylesheet" href="./css/style.css">
+
+<script src="./script/progress.js" defer></script>
+<script src="./script/app.js" defer></script>
+<script src="./script/skipper.js" defer></script>
+<script src="./script/codePanel.js" defer></script>
+
+
+</head>
+<body data-page="record" data-room="record">
+  <a class="skip-link" href="#main-content">본문 바로가기</a>
+
+<header class="site-header">
+  <a class="brand" href="./index.html" aria-label="SKALA CODE ESCAPE 처음 화면">
+    <span class="brand-wing" aria-hidden="true"></span>
+    <span>SKALA CODE ESCAPE</span>
+  </a>
+  <button class="mobile-menu-button" type="button" aria-expanded="false" aria-controls="site-navigation">메뉴</button>
+  <nav id="site-navigation" class="site-navigation" aria-label="교육관 이동">
+    <a data-nav="lobby" href="./lobby.html">로비</a>
+    <a data-nav="html" href="./html-room.html">HTML관</a>
+    <a data-nav="css" href="./css-room.html">CSS관</a>
+    <a data-nav="javascript" href="./js-room.html">JS관</a>
+    <a data-nav="record" href="./record-room.html">기록관</a>
+    <a data-nav="signup" href="./html/signUp.html">입과 등록</a>
+  </nav>
+  <div class="mission-status"><span>증빙</span><strong><span class="progress-count">0</span>/4</strong></div>
+</header>
+
+  <main id="main-content">
+    <section class="hero hero-workroom">
+      <div class="hero-content">
+        <p class="hero-kicker">DEVELOPMENT RECORD ARCHIVE</p>
+        <h1>개발 과정의<br>증거를 복원하라</h1>
+        <p class="hero-copy">
+          코드가 작동하는 것만으로는 학습 과정이 보이지 않습니다.
+          요구사항 분석, 의사코드, 직접 구현, AI 검토, Git 커밋을 순서대로 기록합니다.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#record-archive">기록 복구 시작</a>
+          <a class="button button-secondary" href="./lobby.html">로비로 돌아가기</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="record-archive" class="section">
+      <div class="section-heading">
+        <p class="section-number">TRACEABLE WORKFLOW</p>
+        <h2>손으로 해낸 흔적은 변경 과정에 남습니다</h2>
+        <p>GitHub는 단순 제출함이 아니라 수업 진도와 문제 해결 과정을 확인하는 개발 기록입니다.</p>
+      </div>
+
+      <div class="record-grid">
+        <div class="record-card">
+          <ol class="commit-timeline">
+            <li><span>01</span><div><strong>요구사항 분석</strong><p>필수 파일, 태그, 기능, 금지 조건을 체크리스트로 나눕니다.</p></div></li>
+            <li><span>02</span><div><strong>의사코드 작성</strong><p>번호 게임처럼 입력과 판단 순서를 자연어로 먼저 설계합니다.</p></div></li>
+            <li><span>03</span><div><strong>직접 구현</strong><p>작은 기능 단위로 실행하며 HTML·CSS·JavaScript를 연결합니다.</p></div></li>
+            <li><span>04</span><div><strong>AI 검토</strong><p>완성품 생성보다 누락, 예외 상황, 오류 원인 설명에 활용합니다.</p></div></li>
+            <li><span>05</span><div><strong>Git 커밋</strong><p>기능과 수정 내용을 설명하는 메시지로 변경 기록을 남깁니다.</p></div></li>
+          </ol>
+          <button class="inspect-button" type="button" data-guide="git">🔍 Git 흐름 코드 설명</button>
+        </div>
+
+        <aside class="record-card">
+          <h2>AI와 학습자의 역할 분담</h2>
+          <div class="system-alert">
+            <strong>학습자가 결정</strong>
+            <p>학습목표, 정보 구조, 디자인 콘셉트, 의사코드, 최종 검증</p>
+          </div>
+          <div class="system-alert" style="border-left-color:var(--sk-blue);background:rgba(0,114,198,.07);margin-top:1rem">
+            <strong style="color:var(--sk-blue)">AI가 지원</strong>
+            <p>설계 검토, 오류 원인 설명, 대안 비교, 예외 상황 확인</p>
+          </div>
+          <div class="commit-chips">
+            <code>feat: create semantic pages</code>
+            <code>style: add responsive room layout</code>
+            <code>feat: implement password game</code>
+            <code>fix: handle invalid API response</code>
+          </div>
+        </aside>
+      </div>
+
+      <article class="record-card" style="margin-top:1rem">
+        <h2>대표 프롬프트 기록</h2>
+        <pre><code>다음 과제가 오늘 배운 어떤 개념을 확인하려는지 분석해주세요.
+아직 완성 코드는 작성하지 말고 핵심 학습목표와 구현 순서만 설명해주세요.
+
+제가 작성한 의사코드에서 빠진 단계와 예외 상황을 찾아주세요.
+정답 전체보다 수정해야 할 부분과 이유를 먼저 설명해주세요.</code></pre>
+      </article>
+
+      <button class="mission-complete-button" type="button" data-complete-key="record">Git·AI 기록 증빙 복구</button>
+
+      <div class="door-actions" style="margin-top:2rem">
+        <a class="button button-dark" href="./final-review.html">최종 수료 심사실로 이동</a>
+        <a class="button button-light" href="./lobby.html">로비로 이동</a>
+      </div>
+    </section>
+  </main>
+
+<footer class="site-footer">
+  <div><strong>SKALA CODE ESCAPE</strong><p>HTML·CSS·JavaScript·Git 학습을 위한 비공식 개인 프로젝트 MVP</p></div>
+  <p>등장인물 김선경과 안내자 스키퍼는 가상의 캐릭터입니다. 외부 UI·CSS·JavaScript 라이브러리를 사용하지 않았습니다.</p>
+</footer>
+
+</body>
+</html>

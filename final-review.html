@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>최종 수료 심사 | SKALA CODE ESCAPE</title>
+  <link rel="stylesheet" href="./css/style.css">
+
+<script src="./script/progress.js" defer></script>
+<script src="./script/app.js" defer></script>
+<script src="./script/skipper.js" defer></script>
+<script src="./script/codePanel.js" defer></script>
+<script src="./script/finalReview.js" defer></script>
+
+</head>
+<body data-page="final" data-room="final">
+  <a class="skip-link" href="#main-content">본문 바로가기</a>
+
+<header class="site-header">
+  <a class="brand" href="./index.html" aria-label="SKALA CODE ESCAPE 처음 화면">
+    <span class="brand-wing" aria-hidden="true"></span>
+    <span>SKALA CODE ESCAPE</span>
+  </a>
+  <button class="mobile-menu-button" type="button" aria-expanded="false" aria-controls="site-navigation">메뉴</button>
+  <nav id="site-navigation" class="site-navigation" aria-label="교육관 이동">
+    <a data-nav="lobby" href="./lobby.html">로비</a>
+    <a data-nav="html" href="./html-room.html">HTML관</a>
+    <a data-nav="css" href="./css-room.html">CSS관</a>
+    <a data-nav="javascript" href="./js-room.html">JS관</a>
+    <a data-nav="record" href="./record-room.html">기록관</a>
+    <a data-nav="signup" href="./html/signUp.html">입과 등록</a>
+  </nav>
+  <div class="mission-status"><span>증빙</span><strong><span class="progress-count">0</span>/4</strong></div>
+</header>
+
+  <main id="main-content">
+    <section class="hero hero-logo">
+      <div class="hero-content">
+        <p class="hero-kicker">FINAL REVIEW · NOT AUTOMATIC GRADUATION</p>
+        <h1>네 개의 증빙으로<br>최종 심사를<br>시작하라</h1>
+        <p class="hero-copy">
+          증빙을 모았다는 사실만으로 수료하지 않습니다.
+          필수 기능, 설명 가능성, Git 기록, Public 저장소를 최종적으로 확인합니다.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#review">심사 상태 확인</a>
+          <a class="button button-secondary" href="./lobby.html">로비로 돌아가기</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="review" class="section">
+      <div id="review-lock" class="review-card" hidden>
+        <p class="section-number">ACCESS DENIED</p>
+        <h2>아직 수료 심사 자격이 없습니다</h2>
+        <p>아래 증빙을 먼저 복구한 뒤 다시 방문하세요.</p>
+        <ul id="missing-keys"></ul>
+        <a class="button button-dark" href="./lobby.html">로비에서 미션 선택</a>
+      </div>
+
+      <div id="review-content" class="review-card" hidden>
+        <p class="section-number">FINAL CHECKLIST</p>
+        <h2><span data-student-name>김선경</span> 교육생의 최종 제출 심사</h2>
+        <p>실제 제출 전 확인해야 할 항목을 직접 점검합니다.</p>
+
+        <div class="review-checklist">
+          <label><input type="checkbox"> <span>지정된 HTML 페이지와 필수 태그가 모두 존재하고 링크가 정상 작동한다.</span></label>
+          <label><input type="checkbox"> <span>Box Model, Flexbox, Grid, 반응형 화면과 상태 스타일이 실제 페이지에 적용됐다.</span></label>
+          <label><input type="checkbox"> <span>번호 게임, 계산기, 객체·배열, DOM, 날씨 API와 모듈 분리를 설명할 수 있다.</span></label>
+          <label><input type="checkbox"> <span>기능 단위 Git 커밋이 남아 있고 변경 내용과 커밋 메시지가 일치한다.</span></label>
+          <label><input type="checkbox"> <span>GitHub 저장소가 Public이며 시크릿 모드에서도 최신 코드가 정상적으로 보인다.</span></label>
+        </div>
+
+        <button id="review-submit" class="review-submit" type="button">최종 수료 판정 요청</button>
+
+        <div id="certificate" class="certificate" hidden>
+          <p class="section-number">REVIEW PASSED</p>
+          <h2>수료 심사 통과</h2>
+          <p>
+            <strong data-student-name>김선경</strong> 교육생은 기능을 완성했을 뿐 아니라,
+            무엇을 왜 구현했는지 설명하고 개발 과정을 기록했습니다.
+          </p>
+          <p>이 화면은 교육용 MVP의 스토리 결과이며 실제 SKALA 수료 판정을 의미하지 않습니다.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<footer class="site-footer">
+  <div><strong>SKALA CODE ESCAPE</strong><p>HTML·CSS·JavaScript·Git 학습을 위한 비공식 개인 프로젝트 MVP</p></div>
+  <p>등장인물 김선경과 안내자 스키퍼는 가상의 캐릭터입니다. 외부 UI·CSS·JavaScript 라이브러리를 사용하지 않았습니다.</p>
+</footer>
+
+</body>
+</html>

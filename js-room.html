@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript 보안실 | SKALA CODE ESCAPE</title>
+  <link rel="stylesheet" href="./css/style.css">
+
+<script src="./script/progress.js" defer></script>
+<script src="./script/app.js" defer></script>
+<script src="./script/skipper.js" defer></script>
+<script src="./script/codePanel.js" defer></script>
+
+<script src="./script/missionGame.js" defer></script>
+<script src="./script/grade.js" defer></script>
+<script src="./script/locker.js" defer></script>
+<script type="module" src="./script/realtimeInfo.js"></script>
+
+
+</head>
+<body data-page="javascript" data-room="javascript">
+  <a class="skip-link" href="#main-content">본문 바로가기</a>
+
+<header class="site-header">
+  <a class="brand" href="./index.html" aria-label="SKALA CODE ESCAPE 처음 화면">
+    <span class="brand-wing" aria-hidden="true"></span>
+    <span>SKALA CODE ESCAPE</span>
+  </a>
+  <button class="mobile-menu-button" type="button" aria-expanded="false" aria-controls="site-navigation">메뉴</button>
+  <nav id="site-navigation" class="site-navigation" aria-label="교육관 이동">
+    <a data-nav="lobby" href="./lobby.html">로비</a>
+    <a data-nav="html" href="./html-room.html">HTML관</a>
+    <a data-nav="css" href="./css-room.html">CSS관</a>
+    <a data-nav="javascript" href="./js-room.html">JS관</a>
+    <a data-nav="record" href="./record-room.html">기록관</a>
+    <a data-nav="signup" href="./html/signUp.html">입과 등록</a>
+  </nav>
+  <div class="mission-status"><span>증빙</span><strong><span class="progress-count">0</span>/4</strong></div>
+</header>
+
+  <main id="main-content">
+    <section class="hero hero-hallway">
+      <div class="hero-content">
+        <p class="hero-kicker">JAVASCRIPT SECURITY LAB · ACCESS CONTROL</p>
+        <h1>멈춘 기능을<br>다시 작동시켜라</h1>
+        <p class="hero-copy">
+          번호 맞히기 과제는 특정 방 번호가 아니라 출입 보안 시스템이라는 이야기로 재해석했습니다.
+          입력, 비교, 객체, API의 데이터 흐름을 직접 실행합니다.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#javascript-labs">보안 시스템 복구</a>
+          <a class="button button-secondary" href="./lobby.html">로비로 돌아가기</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="javascript-labs" class="section">
+      <div class="section-heading">
+        <p class="section-number">LOGIC LABS</p>
+        <h2>입력에서 화면 출력까지</h2>
+        <p>각 실습은 수업에서 배운 변수, 조건문, 객체, 이벤트, 비동기 처리를 하나의 작동 흐름으로 연결합니다.</p>
+      </div>
+
+      <div class="lab-grid">
+        <article class="lab-card password-lab">
+          <span class="room-code">SECURITY PASSWORD</span>
+          <h3>출입 비밀번호를 해제하라</h3>
+          <p>1부터 50 사이의 보안번호를 Up·Down 힌트로 찾습니다.</p>
+          <div class="number-console">
+            <label for="guess-input">예상 비밀번호</label>
+            <div class="input-row">
+              <input id="guess-input" type="number" min="1" max="50" placeholder="1~50">
+              <button id="guess-button" type="button">확인</button>
+            </div>
+            <p id="guess-result" class="console-output" aria-live="polite">보안번호가 생성되었습니다.</p>
+            <p id="guess-attempts">시도 횟수: 0</p>
+          </div>
+          <button class="inspect-button" type="button" data-guide="password">🔍 동작 코드 설명</button>
+        </article>
+
+        <article class="lab-card">
+          <span class="room-code">LEVEL CHECK</span>
+          <h3>다음 학습 단계 진입 판정</h3>
+          <p>세 과목의 총점과 평균을 계산하고 기준에 따라 결과를 표시합니다.</p>
+          <div class="score-grid">
+            <label>HTML <input id="score-html" type="number" min="0" max="100" value="80"></label>
+            <label>CSS <input id="score-css" type="number" min="0" max="100" value="75"></label>
+            <label>JavaScript <input id="score-js" type="number" min="0" max="100" value="65"></label>
+          </div>
+          <button id="grade-calculate-button" class="lab-action" type="button">성적 계산</button>
+          <p id="grade-result" class="console-output" aria-live="polite">총점과 평균을 계산해보세요.</p>
+        </article>
+
+        <article class="lab-card locker-lab">
+          <span class="room-code">STUDENT LOCKER</span>
+          <h3>교육생 사물함 데이터</h3>
+          <p>현실의 사물함을 객체와 배열로 모델링하고 여러 물품을 출력합니다.</p>
+          <button id="locker-open-button" class="lab-action" type="button">사물함 열기</button>
+          <div id="locker-output" class="locker-output">아직 사물함이 잠겨 있습니다.</div>
+          <button class="inspect-button" type="button" data-guide="object">🔍 객체 코드 설명</button>
+        </article>
+
+        <article class="lab-card weather-lab">
+          <span class="room-code">WEATHER CONTROL</span>
+          <h3>실시간 통학 날씨</h3>
+          <p>도시 선택 이벤트로 외부 API를 요청하고 온도와 습도를 화면에 표시합니다.</p>
+          <label for="city-select">도시 선택</label>
+          <select id="city-select">
+            <option value="suncheon">순천</option>
+            <option value="seoul">서울</option>
+            <option value="tokyo">도쿄</option>
+          </select>
+          <p id="weather-status">날씨를 불러오는 중입니다.</p>
+          <div id="weather-panel" class="weather-panel" hidden>
+            <p id="weather-location"></p>
+            <div>
+              <span>온도 <strong id="weather-temperature">-</strong></span>
+              <span>습도 <strong id="weather-humidity">-</strong></span>
+            </div>
+            <small id="weather-updated"></small>
+          </div>
+          <button class="inspect-button" type="button" data-guide="weather">🔍 API·모듈 코드 설명</button>
+        </article>
+      </div>
+
+      <button class="mission-complete-button" type="button" data-complete-key="logic">JavaScript 동작 증빙 복구</button>
+
+      <div class="door-actions" style="margin-top:2rem">
+        <a class="button button-dark" href="./record-room.html">다음 공간: Git·AI 기록관</a>
+        <a class="button button-light" href="./lobby.html">로비로 이동</a>
+      </div>
+    </section>
+  </main>
+
+<footer class="site-footer">
+  <div><strong>SKALA CODE ESCAPE</strong><p>HTML·CSS·JavaScript·Git 학습을 위한 비공식 개인 프로젝트 MVP</p></div>
+  <p>등장인물 김선경과 안내자 스키퍼는 가상의 캐릭터입니다. 외부 UI·CSS·JavaScript 라이브러리를 사용하지 않았습니다.</p>
+</footer>
+
+</body>
+</html>

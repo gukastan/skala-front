@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML 구조관 | SKALA CODE ESCAPE</title>
+  <link rel="stylesheet" href="./css/style.css">
+
+<script src="./script/progress.js" defer></script>
+<script src="./script/app.js" defer></script>
+<script src="./script/skipper.js" defer></script>
+<script src="./script/codePanel.js" defer></script>
+
+
+</head>
+<body data-page="html" data-room="html">
+  <a class="skip-link" href="#main-content">본문 바로가기</a>
+
+<header class="site-header">
+  <a class="brand" href="./index.html" aria-label="SKALA CODE ESCAPE 처음 화면">
+    <span class="brand-wing" aria-hidden="true"></span>
+    <span>SKALA CODE ESCAPE</span>
+  </a>
+  <button class="mobile-menu-button" type="button" aria-expanded="false" aria-controls="site-navigation">메뉴</button>
+  <nav id="site-navigation" class="site-navigation" aria-label="교육관 이동">
+    <a data-nav="lobby" href="./lobby.html">로비</a>
+    <a data-nav="html" href="./html-room.html">HTML관</a>
+    <a data-nav="css" href="./css-room.html">CSS관</a>
+    <a data-nav="javascript" href="./js-room.html">JS관</a>
+    <a data-nav="record" href="./record-room.html">기록관</a>
+    <a data-nav="signup" href="./html/signUp.html">입과 등록</a>
+  </nav>
+  <div class="mission-status"><span>증빙</span><strong><span class="progress-count">0</span>/4</strong></div>
+</header>
+
+  <main id="main-content">
+    <section class="hero hero-building">
+      <div class="hero-content">
+        <p class="hero-kicker">HTML ARCHIVE · STRUCTURE EVIDENCE</p>
+        <h1>뒤섞인<br>학습 기록을<br>구조화하라</h1>
+        <p class="hero-copy">
+          정보가 어떤 의미와 관계를 가지는지 판단한 뒤,
+          제목·목록·표·폼·미디어에 적절한 HTML 요소를 선택합니다.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#html-lessons">기록 복구 시작</a>
+          <a class="button button-secondary" href="./lobby.html">로비로 돌아가기</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="html-lessons" class="section">
+      <div class="section-heading">
+        <p class="section-number">STRUCTURE TASKS</p>
+        <h2>과제 결과를 문서 구조로 연결</h2>
+        <p>각 페이지는 별도로 이동하며 수업에서 배운 HTML 요소를 실제 콘텐츠에 적용합니다.</p>
+      </div>
+
+      <div class="lesson-grid" data-highlight="semantic">
+        <article class="lesson-card">
+          <span class="room-code">PROFILE ARCHIVE</span>
+          <h3>교육생 프로필</h3>
+          <p>순서 없는 목록, 순서 있는 목록, 설명 목록을 정보 관계에 맞게 구분합니다.</p>
+          <a class="text-link" href="./html/myProfile.html">프로필 페이지 열기 →</a>
+        </article>
+
+        <article class="lesson-card" data-highlight="table">
+          <span class="room-code">SCHEDULE ARCHIVE</span>
+          <h3>수업 시간표</h3>
+          <p>요일과 시간의 교차 관계를 table, thead, tbody, rowspan, colspan으로 표현합니다.</p>
+          <a class="text-link" href="./html/myClass.html">시간표 페이지 열기 →</a>
+          <button class="mini-inspect" type="button" data-guide="table" aria-label="시간표 코드 설명">🔍</button>
+        </article>
+
+        <article class="lesson-card">
+          <span class="room-code">LEARNING PLAN</span>
+          <h3>학습·휴식 계획</h3>
+          <p>시기와 목표를 구역별로 나누고 의미가 드러나는 문서 구조를 사용합니다.</p>
+          <a class="text-link" href="./html/myHoliday.html">계획 페이지 열기 →</a>
+        </article>
+
+        <article class="lesson-card">
+          <span class="room-code">MEDIA ARCHIVE</span>
+          <h3>교육관 미디어 투어</h3>
+          <p>직접 촬영한 이미지와 대체 텍스트를 사용해 공간을 설명합니다.</p>
+          <a class="text-link" href="./html/myTrip.html">미디어 페이지 열기 →</a>
+        </article>
+
+        <article class="lesson-card">
+          <span class="room-code">ADMISSION FORM</span>
+          <h3>입과 등록서</h3>
+          <p>사용자에게 받을 데이터에 따라 text, email, password, checkbox, textarea를 선택합니다.</p>
+          <a class="text-link" href="./html/signUp.html">등록서 페이지 열기 →</a>
+        </article>
+
+        <article class="lesson-card">
+          <span class="room-code">SEMANTIC HUB</span>
+          <h3>시맨틱 페이지 구조</h3>
+          <p>header, nav, main, section, article, footer로 전체 문서의 역할을 구분합니다.</p>
+          <button class="inspect-button" type="button" data-guide="semantic">🔍 구조 코드 설명</button>
+        </article>
+      </div>
+
+      <button class="mission-complete-button" type="button" data-complete-key="structure">HTML 구조 증빙 복구</button>
+
+      <div class="door-actions" style="margin-top:2rem">
+        <a class="button button-dark" href="./css-room.html">다음 공간: CSS 디자인관</a>
+        <a class="button button-light" href="./lobby.html">로비로 이동</a>
+      </div>
+    </section>
+  </main>
+
+<footer class="site-footer">
+  <div><strong>SKALA CODE ESCAPE</strong><p>HTML·CSS·JavaScript·Git 학습을 위한 비공식 개인 프로젝트 MVP</p></div>
+  <p>등장인물 김선경과 안내자 스키퍼는 가상의 캐릭터입니다. 외부 UI·CSS·JavaScript 라이브러리를 사용하지 않았습니다.</p>
+</footer>
+
+</body>
+</html>
