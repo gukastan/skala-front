@@ -129,12 +129,12 @@ button { cursor: pointer; }
     linear-gradient(90deg, rgba(8,18,32,.93), rgba(8,18,32,.58) 58%, rgba(8,18,32,.18)),
     linear-gradient(0deg, rgba(8,18,32,.64), transparent 58%);
 }
-.hero-sign { background-image: url("../media/skala-sign.jpg"); }
+.hero-sign { background-image: url("../media/skala-main-sign.jpg"); }
 .hero-building { background-image: url("../media/skala-building.jpg"); }
 .hero-lounge { background-image: url("../media/skala-lounge.jpg"); }
-.hero-booths { background-image: url("../media/skala-booths.jpg"); }
-.hero-hallway { background-image: url("../media/skala-hallway.jpg"); }
-.hero-workroom { background-image: url("../media/skala-workroom.jpg"); }
+.hero-booths { background-image: url("../media/skala-study-booths.jpg"); }
+.hero-hallway { background-image: url("../media/skala-empty-hallway.jpg"); }
+.hero-workroom { background-image: url("../media/skala-classroom.jpg"); }
 .hero-logo { background-image: url("../media/skala-wall-logo.jpg"); }
 
 .hero-content {
